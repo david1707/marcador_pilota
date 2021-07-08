@@ -14,6 +14,7 @@ class TextMarcador extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontSize: 80,
+        fontFamily: 'Digital-7',
       ),
     );
   }

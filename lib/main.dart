@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Marcador',
         theme: ThemeData(
-          fontFamily: 'Digital-7',
+          fontFamily: 'Roboto',
           scaffoldBackgroundColor: Colors.black,
         ),
         initialRoute: MarcadorScreen.routeName,
