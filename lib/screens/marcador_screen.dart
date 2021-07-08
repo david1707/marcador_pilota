@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/text_marcador.dart';
+
 class MarcadorScreen extends StatelessWidget {
   static const String routeName = '/marcador';
 
@@ -14,20 +16,43 @@ class MarcadorScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
-              children: [Text('Partida a 60')],
-            ),
-            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('35'),
-                Text('55'),
+                TextMarcador(
+                  text: '60',
+                  color: Colors.amber,
+                )
               ],
             ),
             Row(
               children: [
-                Text('VAL'),
-                Text('NET'),
+                Expanded(
+                  child: TextMarcador(
+                    text: '40',
+                    color: Colors.red,
+                  ),
+                  flex: 1,
+                ),
+                Expanded(
+                    child: TextMarcador(text: '55', color: Colors.blue),
+                    flex: 1),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: TextMarcador(
+                    text: 'VAL',
+                    color: Colors.red,
+                  ),
+                  flex: 1,
+                ),
+                Expanded(
+                    child: TextMarcador(text: 'NET', color: Colors.blue),
+                    flex: 1),
               ],
             ),
           ],
