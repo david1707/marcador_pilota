@@ -45,28 +45,42 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
                   flex: 1,
                 ),
                 Expanded(
-                    child: TextMarcador(
-                      text: marcador.getJocsBlausText,
-                      color: Colors.blue,
-                    ),
-                    flex: 1),
+                  child: TextMarcador(
+                    text: marcador.getJocsBlausText,
+                    color: Colors.blue,
+                  ),
+                  flex: 1,
+                ),
               ],
             ),
             Row(
               children: [
                 Expanded(
-                  child: TextMarcador(
-                    text: marcador.getQuinzesRojosText,
-                    color: Colors.red,
+                  child: GestureDetector(
+                    onTap: () {
+                      marcador.addQuinze(0);
+                      setState(() {});
+                    },
+                    child: TextMarcador(
+                      text: marcador.getQuinzesRojosText,
+                      color: Colors.red,
+                    ),
                   ),
                   flex: 1,
                 ),
                 Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      marcador.addQuinze(1);
+                      setState(() {});
+                    },
                     child: TextMarcador(
                       text: marcador.getQuinzesBlausText,
                       color: Colors.blue,
                     ),
-                    flex: 1),
+                  ),
+                  flex: 1,
+                ),
               ],
             ),
           ],

@@ -2,7 +2,6 @@
 
 Llista de TODO:
 
-- Fer quinzes lliscant el Widget de quinzes
 - Preguntar a quant és la partida i jocs inicials
 - Millorar l'estil
 - Animacions al fer quizes, jocs i acabar la partida
