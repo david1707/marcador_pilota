@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../models/marcador.dart';
 import '../widgets/text_marcador.dart';
 
-class MarcadorScreen extends StatelessWidget {
+class MarcadorScreen extends StatefulWidget {
   static const String routeName = '/marcador';
+
+  @override
+  _MarcadorScreenState createState() => _MarcadorScreenState();
+}
+
+class _MarcadorScreenState extends State<MarcadorScreen> {
+  Marcador marcador = Marcador(60);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +30,7 @@ class MarcadorScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextMarcador(
-                  text: '60',
+                  text: marcador.getJocsMax,
                   color: Colors.amber,
                 )
               ],
@@ -31,13 +39,16 @@ class MarcadorScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextMarcador(
-                    text: '40',
+                    text: marcador.getJocsRojosText,
                     color: Colors.red,
                   ),
                   flex: 1,
                 ),
                 Expanded(
-                    child: TextMarcador(text: '55', color: Colors.blue),
+                    child: TextMarcador(
+                      text: marcador.getJocsBlausText,
+                      color: Colors.blue,
+                    ),
                     flex: 1),
               ],
             ),
@@ -45,13 +56,16 @@ class MarcadorScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextMarcador(
-                    text: 'VAL',
+                    text: marcador.getQuinzesRojosText,
                     color: Colors.red,
                   ),
                   flex: 1,
                 ),
                 Expanded(
-                    child: TextMarcador(text: 'NET', color: Colors.blue),
+                    child: TextMarcador(
+                      text: marcador.getQuinzesBlausText,
+                      color: Colors.blue,
+                    ),
                     flex: 1),
               ],
             ),
