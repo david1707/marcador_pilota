@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TextMarcador extends StatelessWidget {
-  String text;
-  Color color;
+  final String text;
+  final Color color;
 
   TextMarcador({@required this.text, @required this.color});
 
