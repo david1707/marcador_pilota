@@ -58,7 +58,7 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      marcador.addQuinze(0);
+                      marcador.addQuinze(marcador.equipRoig, marcador.equipBlau);
                       setState(() {});
                     },
                     child: TextMarcador(
@@ -71,7 +71,7 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      marcador.addQuinze(1);
+                      marcador.addQuinze(marcador.equipBlau, marcador.equipRoig);
                       setState(() {});
                     },
                     child: TextMarcador(
