@@ -38,7 +38,12 @@ class Marcador {
       _quinzesList[equipRoig.getQuinzes].toString();
   String get getQuinzesBlausText =>
       _quinzesList[equipBlau.getQuinzes].toString();
+
   String get getJocsRojosText => (equipRoig.getJocs * 5).toString();
   String get getJocsBlausText => (equipBlau.getJocs * 5).toString();
+
   String get getJocsMax => _jocsMax.toString();
+  set setJocsMax(int numJocsMax) {
+    _jocsMax = numJocsMax;
+  }
 }

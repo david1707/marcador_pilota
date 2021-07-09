@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/marcador.dart';
 import '../widgets/text_marcador.dart';
+import '../widgets/custom_drawer.dart';
 
 class MarcadorScreen extends StatefulWidget {
   static const String routeName = '/marcador';
@@ -22,6 +23,7 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
           'Marcador de Pilota',
         ),
       ),
+      drawer: CustomDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -58,7 +60,8 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      marcador.addQuinze(marcador.equipRoig, marcador.equipBlau);
+                      marcador.addQuinze(
+                          marcador.equipRoig, marcador.equipBlau);
                       setState(() {});
                     },
                     child: TextMarcador(
@@ -71,7 +74,8 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      marcador.addQuinze(marcador.equipBlau, marcador.equipRoig);
+                      marcador.addQuinze(
+                          marcador.equipBlau, marcador.equipRoig);
                       setState(() {});
                     },
                     child: TextMarcador(
