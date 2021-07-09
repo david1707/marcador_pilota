@@ -1,42 +1,44 @@
+import './equip.dart';
+
 List<dynamic> _quinzesList = ['NET', 15, 30, 'VAL'];
 
 class Marcador {
   int _jocsMax;
   int _jocsMin;
-  List<int> _quinzes = [0, 0];
-  List<int> _jocs = [4, 3];
+  Equip equipRoig = Equip();
+  Equip equipBlau = Equip();
 
   Marcador(this._jocsMax);
 
-  void addQuinze(int equip) {
+  void addQuinze(Equip equipFaQuinze, Equip equipNoFaQuinze) {
     // Si equip = VAL, fes joc
-    if (_quinzes[equip] == 3) {
-      _addJoc(equip);
+    if (equipFaQuinze.getQuinzes == 3) {
+      _addJoc(equipFaQuinze);
     }
     // Si és 30-VAL, deixar a dos
-    else if ((equip == 0 && _quinzes[0] == 2 && _quinzes[1] == 3) ||
-        (equip == 1 && _quinzes[0] == 3 && _quinzes[1] == 2)) {
-      _quinzes = [2, 2];
+    else if (equipFaQuinze.getQuinzes == 2 && equipNoFaQuinze.getQuinzes == 3) {
+      equipFaQuinze.setQuinzes = 2;
+      equipNoFaQuinze.setQuinzes = 2;
     }
     // En cas contrari, deixar a 2
     else {
-      _quinzes[equip]++;
+      equipFaQuinze.addQuinze();
     }
   }
 
-  void _addJoc(int equip) {
-    _quinzes = [0, 0];
-    _jocs[equip]++;
+  void _addJoc(Equip equip) {
+    equipRoig.nouJoc();
+    equipBlau.nouJoc();
+    equip.addJoc();
   }
 
-  void reset() {
-    _quinzes = [0, 0];
-    _jocs = [0, 0];
-  }
+  void inicialitzar() {}
 
-  String get getQuinzesRojosText => _quinzesList[_quinzes[0]].toString();
-  String get getQuinzesBlausText => _quinzesList[_quinzes[1]].toString();
-  String get getJocsRojosText => (_jocs[0] * 5).toString();
-  String get getJocsBlausText => (_jocs[1] * 5).toString();
+  String get getQuinzesRojosText =>
+      _quinzesList[equipRoig.getQuinzes].toString();
+  String get getQuinzesBlausText =>
+      _quinzesList[equipBlau.getQuinzes].toString();
+  String get getJocsRojosText => (equipRoig.getJocs * 5).toString();
+  String get getJocsBlausText => (equipBlau.getJocs * 5).toString();
   String get getJocsMax => _jocsMax.toString();
 }
