@@ -8,7 +8,7 @@ class Marcador {
   Equip equipRoig = Equip();
   Equip equipBlau = Equip();
 
-  Marcador(this._jocsMax);
+  Marcador();
 
   void addQuinze(Equip equipFaQuinze, Equip equipNoFaQuinze) {
     // Si equip = VAL, fes joc

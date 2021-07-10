@@ -34,7 +34,6 @@ class CustomDrawer extends StatelessWidget {
             title: Text('Partida nova'),
             onTap: () {
               inicialitzarMarcador();
-              Navigator.of(context).pop();
             },
           ),
           Divider(),
