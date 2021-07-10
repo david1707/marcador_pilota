@@ -14,6 +14,11 @@ class MarcadorScreen extends StatefulWidget {
 class _MarcadorScreenState extends State<MarcadorScreen> {
   Marcador marcador = Marcador(60);
 
+  Function inicialitzarMarcador() {
+    marcador.inicialitzar();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +28,7 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
           'Marcador de Pilota',
         ),
       ),
-      drawer: CustomDrawer(),
+      drawer: CustomDrawer(inicialitzarMarcador),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -3,8 +3,8 @@ import './equip.dart';
 List<dynamic> _quinzesList = ['NET', 15, 30, 'VAL'];
 
 class Marcador {
-  int _jocsMax;
-  int _jocsMin;
+  int _jocsMax = 60;
+  int _jocsMin = 0;
   Equip equipRoig = Equip();
   Equip equipBlau = Equip();
 
@@ -32,7 +32,13 @@ class Marcador {
     equip.addJoc();
   }
 
-  void inicialitzar() {}
+  void inicialitzar() {
+    equipRoig.setJocs = _jocsMin;
+    equipBlau.setJocs = _jocsMin;
+
+    equipRoig.setQuinzes = 0;
+    equipBlau.setQuinzes = 0;
+  }
 
   String get getQuinzesRojosText =>
       _quinzesList[equipRoig.getQuinzes].toString();
