@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:marcador_pilota/screens/nova_partida_screen.dart';
 
 import './screens/marcador_screen.dart';
 
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Roboto',
         scaffoldBackgroundColor: Colors.black,
       ),
-      initialRoute: MarcadorScreen.routeName,
+      initialRoute: NovaPartidaScreen.routeName,
       routes: {
         MarcadorScreen.routeName: (context) => MarcadorScreen(),
+        NovaPartidaScreen.routeName: (context) => NovaPartidaScreen(),
       },
     );
   }

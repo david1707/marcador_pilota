@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:marcador_pilota/screens/nova_partida_screen.dart';
 
 import '../models/marcador.dart';
 
 class CustomDrawer extends StatelessWidget {
-  Function inicialitzarMarcador;
-
-  CustomDrawer(this.inicialitzarMarcador);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -33,7 +30,8 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             title: Text('Partida nova'),
             onTap: () {
-              inicialitzarMarcador();
+              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(NovaPartidaScreen.routeName);
             },
           ),
           Divider(),

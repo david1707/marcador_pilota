@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:numberpicker/numberpicker.dart';
-
 import '../models/marcador.dart';
 import '../widgets/text_marcador.dart';
 import '../widgets/custom_drawer.dart';
@@ -15,57 +13,6 @@ class MarcadorScreen extends StatefulWidget {
 
 class _MarcadorScreenState extends State<MarcadorScreen> {
   Marcador marcador = Marcador();
-  int _jocsMaximNovaPartida = 60;
-
-  Function inicialitzarMarcador() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Opcions de la nova partida"),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  NumberPicker(
-                      value: _jocsMaximNovaPartida,
-                      minValue: 0,
-                      maxValue: 100,
-                      step: 5,
-                      onChanged: (value) {
-                        setState(() => _jocsMaximNovaPartida = value);
-                      }),
-                  Text('Partida a $_jocsMaximNovaPartida jocs'),
-                ],
-              )
-            ],
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: new Text("Nova partida"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: new Text(
-                "Tancar",
-                style: TextStyle(color: Colors.red),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-    // setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +23,7 @@ class _MarcadorScreenState extends State<MarcadorScreen> {
           'Marcador de Pilota',
         ),
       ),
-      drawer: CustomDrawer(inicialitzarMarcador),
+      drawer: CustomDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
