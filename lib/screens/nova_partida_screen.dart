@@ -12,6 +12,8 @@ class NovaPartidaScreen extends StatefulWidget {
 class _NovaPartidaScreenState extends State<NovaPartidaScreen> {
   int _jocsMinimNovaPartida = 15;
   int _jocsMaximNovaPartida = 60;
+  final List<String> jugadorsEquipRoig = ['Pep', 'Tonet'];
+  final List<String> jugadorsEquipBlau = ['Moltó', 'Verònica'];
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,42 @@ class _NovaPartidaScreenState extends State<NovaPartidaScreen> {
                     onChanged: (value) {
                       setState(() => _jocsMinimNovaPartida = value);
                     }),
-                Text('Començarà des de $_jocsMinimNovaPartida jocs'),
+                Text('Començarà amb $_jocsMinimNovaPartida jocs'),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Text('Jugadors Equip Roig'),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Afegir jugador',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        ...jugadorsEquipRoig
+                            .map((jugador) => Text(jugador))
+                            .toList(),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text('Jugadors Equip Blau'),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text('Afegir jugador'),
+                        ),
+                        SizedBox(height: 10),
+                        ...jugadorsEquipBlau
+                            .map((jugador) => Text(jugador))
+                            .toList(),
+                      ],
+                    ),
+                  ],
+                )
               ],
             ),
           ],
